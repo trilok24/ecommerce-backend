@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true,
-    match: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, // Regex for email validation
+    match: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 
     validate: {
       validator: function (email) {
         return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
@@ -31,7 +31,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
     unique: true,
-    match: /^[6-9]\d{9}$/, // Regex for Indian mobile number
+    match: /^[6-9]\d{9}$/,
     validate: {
       validator: function (phone) {
         return /^[6-9]\d{9}$/.test(phone);
@@ -42,8 +42,7 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-    minlength: 6,
-    maxlength: 15
+    minlength: 6
   },
   address: {
     shipping: {
